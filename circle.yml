@@ -4,7 +4,7 @@ checkout:
     - mkdir -p ~/.go_workspace/src/github.com/compose/
     - git submodule init
     - git submodule update
-    - ln -s ./transporter ~/.go_workspace/src/github.com/compose/transporter
+    - ln -s ~/compose-transporter-builder/transporter ~/.go_workspace/src/github.com/compose/transporter
 
 general:
   build_dir: transporter
