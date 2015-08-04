@@ -18,7 +18,7 @@ dependencies:
   override:
     - goxc
   post:
-    - cp -r pkg/* $CIRCLE_ARTIFACTS/
+    - cp -r pkg/snapshot/* $CIRCLE_ARTIFACTS/
 
 test:
   override:
