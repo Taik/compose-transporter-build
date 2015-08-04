@@ -1,11 +1,14 @@
 checkout:
   post:
-    - ln -s ~/compose-transporter-build ~/.go_workspace/src/github.com/taik/compose-transporter-build
+    - rm -rf ~/.go_workspace/github.com/compose/transporter/
+    - mkdir -p ~/.go_workspace/src/github.com/compose/
     - git submodule init
     - git submodule update
+    - ln -s ~/compose-transporter-builder/transporter ~/.go_workspace/src/github.com/compose/transporter
 
 dependencies:
   pre:
     - go get github.com/tools/godep
   override:
-    - godep go build ./transporter/...
+    - cd ~/compose-transporter-builder/transporter
+    - godep go build ./...
