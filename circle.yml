@@ -1,7 +1,8 @@
 checkout:
-  pre:
-    - rm -rf ~/.go_workspace/src/github.com/taik/transporter-build
-    - mkdir -p ~/.go_workspace/src/github.com/taik/transporter-build
+  post:
+    - ln -s ~/compose-transporter-build ~/.go_workspace/src/github.com/taik/compose-transporter-build
+    - git submodule init
+    - git submodule update
 
 dependencies:
   pre:
