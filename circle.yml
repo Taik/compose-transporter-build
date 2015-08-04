@@ -23,3 +23,9 @@ dependencies:
 test:
   override:
     - godep go test ./...
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - curl -T $CIRCLE_ARTIFACTS/transporter_linux_amd64.tar.gz -utaik:$BINTRAY_API_KEY -H "X-Bintray-Package:compose-transporter" -H "X-Bintray-Version:$CIRCLE_SHA1" https://api.bintray.com/content/taik/generic/transporter_linux_amd64.tar.gz
