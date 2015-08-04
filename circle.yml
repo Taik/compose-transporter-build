@@ -1,0 +1,8 @@
+checkout:
+  post:
+    rm -rf ~/.go_workspace/src/github.com/taik/transporter-build
+    mkdir -p ~/.go_workspace/src/github.com/taik/transporter-build
+
+dependencies:
+  override:
+    go get github.com/tools/godep
