@@ -14,3 +14,9 @@ dependencies:
     - go get github.com/tools/godep
   override:
     - godep go build ./...
+  post:
+    - goxc
+
+test:
+  override:
+    - godep go test ./...
