@@ -12,10 +12,13 @@ general:
 dependencies:
   pre:
     - go get github.com/tools/godep
+    - go get github.com/tobi/airbrake-go
+    - godep restore
+    - cp ~/compose-transporter-builder/.goxc.json transporter/
   override:
-    - godep go build ./...
-  post:
     - goxc
+  post:
+    - cp -r pkg/* $CIRCLE_ARTIFACTS/
 
 test:
   override:
