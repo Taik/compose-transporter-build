@@ -4,11 +4,13 @@ checkout:
     - mkdir -p ~/.go_workspace/src/github.com/compose/
     - git submodule init
     - git submodule update
-    - ln -s ~/compose-transporter-builder/transporter ~/.go_workspace/src/github.com/compose/transporter
+    - ln -s ./transporter ~/.go_workspace/src/github.com/compose/transporter
+
+general:
+  build_dir: transporter
 
 dependencies:
   pre:
     - go get github.com/tools/godep
   override:
-    - cd ~/compose-transporter-builder/transporter
     - godep go build ./...
